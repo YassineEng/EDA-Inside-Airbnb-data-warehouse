@@ -6,7 +6,6 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "arrow-odbc>=9.3.3",
-    "connectorx>=0.4.4",
     "polars>=0.20.0",
     "pyodbc>=5.3.0",
     "sqlalchemy>=2.0.44",
