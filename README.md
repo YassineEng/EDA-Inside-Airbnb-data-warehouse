@@ -6,18 +6,20 @@
 
 The following Python packages are required for this project:
 
-- `pandas`: For data manipulation and analysis.
+- `polars`: For high-performance data manipulation and analysis.
 - `pyodbc`: To connect to the SQL Server database.
 - `jupyter`: To create and run Jupyter notebooks.
 - `matplotlib`: For data visualization.
 - `seaborn`: For enhanced data visualization.
 - `sqlalchemy`: For SQL database toolkit and Object Relational Mapper.
 - `langdetect`: For language detection in review comments.
+- `arrow-odbc`: For Apache Arrow-based ODBC connections.
+- `connectorx`: For faster data loading from databases into Polars DataFrames.
 
 You can install these dependencies using `uv` by running the following command:
 
 ```bash
-uv pip install pandas pyodbc jupyter matplotlib seaborn sqlalchemy langdetect
+uv pip install polars pyodbc jupyter matplotlib seaborn sqlalchemy langdetect arrow-odbc connectorx
 ```
 
 ### Jupyter Notebook (`eda.ipynb`)
@@ -25,7 +27,7 @@ uv pip install pandas pyodbc jupyter matplotlib seaborn sqlalchemy langdetect
 The analysis is conducted in `eda.ipynb`. This notebook includes:
 
 *   **Database Connection:** Establishes a connection to the SQL Server database (`D:\SQLData\AirbnbDataWarehouse.mdf`). **Note:** You need to replace `'YOUR_SERVER_NAME'` in the notebook with your actual SQL Server instance name and ensure the `.mdf` file is attached to a running SQL Server instance.
-*   **Data Loading:** Loads `dim_hosts`, `fact_reviews`, and `dim_listings` tables into pandas DataFrames for analysis.
+*   **Data Loading:** Loads `dim_hosts`, `fact_reviews`, and `dim_listings` tables into Polars DataFrames for analysis.
 *   **Null Value Examination:** Identifies and visualizes null values across all columns in the loaded DataFrames using heatmaps.
 *   **"Unknown" Value Examination:** Checks for common "unknown" representations (e.g., 'unknown', 'n/a', empty strings) in string columns and visualizes their counts.
 *   **Correlation Analysis:** Computes and visualizes the correlation matrix for numerical columns in `dim_listings` using a heatmap.
